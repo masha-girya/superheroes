@@ -1,7 +1,7 @@
 # Superheroes database
-Simple database with CRUD implementation
-### You can read about **backend** in `packages/backend/README.md`
-### You can read about **frontend** in `packages/frontend/README.md`
+Simple database with CRUD implementation <br>
+You can read about **backend** in `packages/backend/README.md` <br>
+You can read about **frontend** in `packages/frontend/README.md`
 
 ## Technologies backend
 Typescript
