@@ -1,7 +1,7 @@
 # Superheroes database
 Simple database with CRUD implementation <br>
-You can read about **backend** in `packages/backend/README.md` <br>
-You can read about **frontend** in `packages/frontend/README.md`
+You can read about **backend** in [packages/backend/README.md](https://github.com/masha-girya/superheroes/blob/main/packages/backend/README.md) <br>
+You can read about **frontend** in [packages/frontend/README.md](https://github.com/masha-girya/superheroes/blob/main/packages/frontend/README.md)
 
 ## Technologies backend
 Typescript
@@ -29,4 +29,4 @@ Tests are implemented on backend side:
 2. run `npm run test src/modules/superheroes/superhero.spec.ts`
 
 ## Base link
-`http://localhost:3000/#/` or `http://localhost:3000/`
+[http://localhost:3000/#/](http://localhost:3000/#/) or [http://localhost:3000/](http://localhost:3000/#/)
