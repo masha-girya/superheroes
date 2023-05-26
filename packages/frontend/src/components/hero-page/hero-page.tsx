@@ -45,6 +45,7 @@ export const HeroPage = () => {
           <div className="hero-page__images">
             {[hero.images].flat().map(image => (
               <img
+                key={image}
                 alt={hero.nickname}
                 src={`data:image/png;base64,${image}`}
                 className="hero-page__image"
