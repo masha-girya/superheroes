@@ -5,6 +5,7 @@ import { ISuperhero } from '../../types';
 import { createFormData } from '../../utils/helpers';
 import { useRequest } from '../../utils/hooks';
 import { addSuperhero, updateSuperhero } from '../../utils/api';
+import { dataURLtoFile } from '../../utils/helpers/image.helper';
 
 interface IProps {
   hero: ISuperhero,
@@ -14,7 +15,11 @@ export const useEditState = ({ hero }: IProps) => {
   const { pathname } = useLocation();
   const [error, setError] = useState('');
   const [isSuccess, setIsSuccess] = useState(false);
-  const [newImages, setNewImages] = useState<File[] | null>(null);
+  const convertedImages = [hero.images]
+    .flat()
+    .map(image => dataURLtoFile(`data:image/png;base64,${image}`, `${image.slice(0, 8)}.jpg`));
+
+  const [newImages, setNewImages] = useState<File[]>(convertedImages);
   const { sendUniqueRequest, isLoading, isError } = useRequest();
 
   const currImages = useMemo(() => {
@@ -49,7 +54,6 @@ export const useEditState = ({ hero }: IProps) => {
         || superpowers.length === 0
         || images.length === 0
       ) {
-        // eslint-disable-next-line max-len
         setError('There must not be empty fields');
 
         return;
@@ -88,7 +92,7 @@ export const useEditState = ({ hero }: IProps) => {
         [...formik.values.images, ...uploadedImages],
       );
 
-      setNewImages(Array.from(files));
+      setNewImages(prev => [...Array.from(files), ...prev]);
     }
   };
 
@@ -99,12 +103,10 @@ export const useEditState = ({ hero }: IProps) => {
 
     formik.setFieldValue('images', updatedImages);
 
-    if (newImages) {
-      const updatedNewImages = [...newImages];
+    const updatedNewImages = [...newImages];
 
-      updatedNewImages.splice(index, 1);
-      setNewImages(updatedNewImages);
-    }
+    updatedNewImages.splice(index, 1);
+    setNewImages(updatedNewImages);
   };
 
   useEffect(() => {
