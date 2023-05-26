@@ -1,0 +1,8 @@
+@use './styles/mixins';
+@use './styles/variables' as var;
+
+.App {
+  max-height: 100vh;
+  margin-top: 60px;
+  margin-bottom: 75px;
+}

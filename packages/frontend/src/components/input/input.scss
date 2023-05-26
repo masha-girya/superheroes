@@ -1,0 +1,13 @@
+.Input {
+  &__container {
+    position: relative;
+  }
+
+  & .MuiTextField-root {
+    width: 300px;
+  
+    & .MuiOutlinedInput-input {
+      line-height: 24px;
+    }
+  }
+}

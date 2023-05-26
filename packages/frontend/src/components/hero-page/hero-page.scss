@@ -1,0 +1,57 @@
+@use '../../styles/mixins';
+@use '../../styles/variables' as var;
+
+.hero-page {
+  margin: 0 auto;
+
+  &__container {
+    padding: 50px;
+    padding-top: 0;
+    margin: 0 auto;
+
+    max-width: 1000px;
+    overflow: hidden;
+  }
+
+  &__back-link {
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    font-family: 'Roboto';
+    text-transform: uppercase;
+    color: var.$color-dark;
+
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      border-color: var.$color-dark;
+    }
+  }
+
+  &__images {
+    @include mixins.placeItems(space-between, center);
+    gap: 20px;
+    overflow-x: auto;
+
+    margin-bottom: 30px;
+  }
+
+  &__image {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  &__facts {
+    margin-bottom: 10px;
+    width: max-content;
+    max-width: 700px;
+  }
+
+  &__actions {
+    @include mixins.placeItems(space-between, center);
+
+    max-width: 200px;
+    margin-top: 30px;
+  }
+}

@@ -1,0 +1,24 @@
+@use '../../styles/variables' as var;
+@use '../../styles/mixins';
+
+.hero-list {
+  display: grid;
+  place-items: center;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    margin-bottom: 75px;
+  }
+
+  &__pages {
+    @include mixins.placeItems(space-around, center);
+    gap: 20px;
+
+    max-width: 500px;
+    margin-bottom: 30px;
+  }
+}

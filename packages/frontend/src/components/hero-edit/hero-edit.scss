@@ -1,0 +1,24 @@
+@use '../../styles/mixins';
+@use '../../styles/variables' as var;
+
+.hero-edit {
+  padding: 50px;
+  padding-top: 0;
+  margin: 0 auto;
+
+  max-width: 1000px;
+
+  &__back-link {
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    font-family: 'Roboto';
+    text-transform: uppercase;
+    color: var.$color-dark;
+
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      border-color: var.$color-dark;
+    }
+  }
+}
